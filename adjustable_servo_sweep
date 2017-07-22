@@ -7,8 +7,8 @@ Servo servo;
 
 //initialize parameters
   int angle=0;
-  const int angleIncrement=2;
-  const int timeIncrement=500;
+  const int angleIncrement=2;  //degrees
+  const int timeIncrement=500; //milliseconds
   
 void setup() {
 //analog power from pin 8
