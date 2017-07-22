@@ -1,0 +1,37 @@
+//adjust the speed easily by playing around with angleIncrement and timeIncrement in lines 10 and 11, respectively.
+
+#include <Servo.h> 
+
+//name the servo
+Servo servo;
+
+//initialize parameters
+  int angle=0;
+  const int angleIncrement=2;
+  const int timeIncrement=500;
+  
+void setup() {
+//analog power from pin 8
+  servo.attach(8);
+//initialize servo
+  servo.write(0);
+  delay(2000);
+}
+
+void loop() {
+
+//when the angle is less than 90 do this do this until it hits 90
+while (angle <= 90) {
+  servo.write(angle);
+  angle=angle+angleIncrement;
+  delay(timeIncrement);
+}
+
+//when the angle is greater then 0 do this until it hits 0
+while (angle >= 0) {
+servo.write(angle);
+angle=angle-angleIncrement;
+delay(timeIncrement);
+}
+
+}
